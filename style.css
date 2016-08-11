@@ -1,0 +1,150 @@
+.center {
+    margin-right: auto;
+    margin-left: auto;
+}
+.italic {
+    font-style: italic;
+    text-decoration: underline;
+}
+
+/* ELEMENT STYLES */
+
+h1, h4 {
+    text-align: center;
+    font-family: sans-serif;
+    color: #666666;
+    border: 0;
+}
+p {
+    text-align: center;
+    font-family: sans-serif;
+    line-height: 16pt;
+    color: #666666;
+}
+.button {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+#restart {
+    font-size: 12pt;
+    color: #666666;
+    background-color: #dedede;
+    padding: 5px 15px 5px 15px;
+}
+#option1 {
+    font-size: 12pt;
+    color: #666666;
+    background-color: #dedede;
+    padding: 5px 15px 5px 15px;
+}
+#option2 {
+    font-size: 12pt;
+    color: #666666;
+    background-color: #dedede;
+    padding: 5px 15px 5px 15px;
+}
+
+/* BOARD STYLES */
+
+#board-outer {
+    height: 350px;
+    /* 350*/
+    width: 350px;
+    background-color: none;
+    /*overflow: hidden;*/
+}
+#table {
+    width: 354px;
+    height: 354px;
+    /*float: left;*/
+    background-color: none;
+    border-spacing: 0;
+    margin-left: -2px;
+    margin-top: -2px;
+}
+td {
+    height: 116px;
+    width: 116px;
+    text-align: center;
+    font-family: sans-serif;
+    font-size: 40pt;
+    border-collapse: collapse;
+    border: 2px solid darkblue;
+    text-transform: uppercase;
+    color: #999999;
+}
+.x {
+    width: 100%;
+    height: 100%;
+    background-color: blue;
+}
+.o {
+    width: 100%;
+    height: 100%;
+    background-color: red;
+}
+.playerOneResult {
+    height: 300px;
+    width: 130px;
+    border: 2px blue dashed;
+}
+.result {
+    height: 100px;
+    width: 100px;
+    border: 3px red solid;
+    /*float: left;*/
+    margin-top: 10px;
+    /*margin-left: 70px;*/
+    background-image: url('trophy.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}
+.playerOneResult, .playerTwoResult {
+    display: inline-block;
+}
+.playerTwoResult {
+    float: right;
+}
+.dollImage1 {
+    height: 100px;
+    width: 100px;
+    border: 3px red solid;
+    float: left;
+    /*margin-top: 130px;
+    margin-left: 30px;*/
+    background-image: url('image1.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}
+.dollImage2 {
+    height: 100px;
+    width: 100px;
+    border: 3px red solid;
+    float: right;
+    margin: 70px 10px;
+    background-image: url('image2.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 1;
+}
+.dollImage3 {
+    height: 100px;
+    width: 130px;
+    border: 3px black solid;
+    /*float: right;*/
+    margin: 140px auto;
+    background-image: url('image3.jpeg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: none;
+    /*opacity: 1;*/
+}
+
+/*body {
+    background-image: url("image5.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /*background-color: blue;*/
