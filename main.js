@@ -28,10 +28,15 @@ var clearBoard;
 var singlePlayerOn = 0;
 
 var newGame = function() {
+
     turn = 0;
     $('#option1').on('click', function(event) {
         singlePlayerOn = 1;
-        console.log(' on button clicked');
+        $(".result1").css('opacity', '0');
+        $(".result2").css('opacity', '0');
+        $(".displayMessage").hide();
+        clearBoard();
+          console.log(' on button clicked');
     });
 
 
@@ -39,16 +44,16 @@ var newGame = function() {
 // INITIALIZES GAME - keep after var newGame
 $(document).ready(function() {
 
-
+ // var audioWin = new Audio('winers.mp3');
     $('td').on('click', function(event) {
-
+// $(".displayMessage").val('');
             console.log("turn is " + turn);
             if (turn === 0) {
                 console.log("ANYTHING");
-                // $(".dollImage1").show();
+
+
                 $(this).text(playerX);
-                // $('.dollImage1').css('opacity', '1');
-                // $('.dollImage2').css('opacity', '0');
+
                 boardCheck();
                 checkWin();
                 turn = 1;
@@ -58,8 +63,7 @@ $(document).ready(function() {
             } else {
 
                 $(this).text(playerO);
-                // $('.dollImage2').css('opacity', '1');
-                // $('.dollImage1').css('opacity', '0');
+
                 console.log("EveryTHING");
                 boardCheck();
                 checkWin();
@@ -72,13 +76,12 @@ $(document).ready(function() {
         singlePlayerOn = 0;
         boardCheck();
         clearBoard();
-        // $(".result").hide();
-        // $('.dollImage1').hide();
-        // $('.dollImage2').hide();
-        // $("#table").show();
-        // $("#option1").show();
-        // // newGame();
-        // boardCheck();
+        $(".result1").css('opacity', '0');
+        $(".result2").css('opacity', '0');
+        // $(".displayMessage").text('');
+        $(".displayMessage").hide();
+
+
     });
     newGame();
 });
@@ -125,21 +128,16 @@ checkWin = function() { // CHECKS IF X WON
             winAlert();
 
         } else { // CHECKS FOR TIE GAME IF ALL CELLS ARE FILLED
+
             if (((a1 == "x") || (a1 == "o")) && ((b1 == "x") || (b1 == "o")) &&
                 ((c1 == "x") || (c1 == "o")) && ((a2 == "x") || (a2 == "o")) &&
                 ((b2 == "x") || (b2 == "o")) && ((c2 == "x") || (c2 == "o")) &&
                 ((a3 == "x") || (a3 == "o")) && ((b3 == "x") || (b3 == "o")) &&
                 ((c3 == "x") || (c3 == "o"))) {
-                // $(".result").show();
-                // $(".result").text("It's a tie!!");
-                // $('.dollImage3').show();
-                alert("It's a tie!");
-                // $('.dollImage1').css('opacity', '0');
-                // $('.dollImage2').css('opacity', '0');
-                // clearBoard();
-                // $("#table").hide();
-                // $(".result").show();
-                // $(".result").text("It's a tie!");
+
+                $(".displayMessage").text("It's a tie!").show();
+                // winAlert();
+
 
             }
         }
@@ -150,31 +148,30 @@ checkWin = function() { // CHECKS IF X WON
 // DECLARES WHO WON
 var winAlert = function() {
     if (xWin === true) {
-        alert("X Wins!");
-        // $(".result").show();
-        // $(".result").text("X Wins!");
-        // $('.dollImage1').css('opacity', '1');
-        // $('.dollImage1').css('margin-left', '230px');
-        // $('.dollImage1').css('width', '230px');
-        // $('.dollImage1').css('height', '230px');
-        // $('.dollImage2').css('opacity', '0');
-        // $("#option1").hide();
+        // $(".displayMessage").val('');
+        $(".displayMessage").show();
+        $(".displayMessage").text("X wins!");
+        // audioWin.play();
+        // audioWin.play();
+        // alert("X Wins!");
+        $(".result1").css('opacity', '1');
+        $(".result2").css('opacity', '0');
+
+
         clearBoard();
 
-        // $("#table").hide();
+
     } else {
         if (oWin === true) {
-            alert("0 Wins!");
-            // $(".result").show();
-            // $(".result").text("O Wins!");
-            // $('.dollImage2').css('opacity', '1');
-            // $('.dollImage2').css('margin-left', '80px');
-            // $('.dollImage1').css('opacity', '0');
-            //
-            // $("#option1").hide();
-            // alert("O Wins!");
+            // $(".displayMessage").val('');
+            $(".displayMessage").show();
+            $(".displayMessage").text("O wins!");
+            // alert("0 Wins!");
+            $(".result2").css('opacity', '1');
+            $(".result1").css('opacity', '0');
+// audioWin.play();
             clearBoard();
-            // $("#table").hide();
+
         }
     }
 };
