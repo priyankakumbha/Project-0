@@ -1,5 +1,5 @@
-var playerX = 'x'; // turn = 0
-var playerO = 'o'; // turn = 1
+var player1 = 'x'; // turn = 0
+var player2 = 'o'; // turn = 1
 var compGen; //for ai
 var turn = 0;
 
@@ -7,20 +7,19 @@ var boardCheck; // function to check value in each cell
 var a1; // value within each cell
 var a2;
 var a3;
-var b1;
-var b2;
-var b3;
-var c1;
-var c2;
-var c3;
+var a4;
+var a5;
+var a6;
+var a7;
+var a8;
+var a9;
 
 var checkWin; // function that checks the board for winning combo
 var xWin = false; // true if X wins
 var oWin = false; // true if O wins
 var winAlert;
-
-
-
+var audio = document.getElementById("song");
+var audio1 = document.getElementById("song");
 
 
 var newGame;
@@ -28,31 +27,25 @@ var clearBoard;
 var singlePlayerOn = 0;
 
 var newGame = function() {
-
     turn = 0;
     $('#option1').on('click', function(event) {
         singlePlayerOn = 1;
         $(".result1").css('opacity', '0');
         $(".result2").css('opacity', '0');
         $(".displayMessage").hide();
+        audio.pause();
+        audio1.pause();
         clearBoard();
-          console.log(' on button clicked');
+        console.log(' on button clicked');
     });
-
-
 };
 // INITIALIZES GAME - keep after var newGame
 $(document).ready(function() {
-
- // var audioWin = new Audio('winers.mp3');
     $('td').on('click', function(event) {
-// $(".displayMessage").val('');
-            console.log("turn is " + turn);
+        console.log("turn is " + turn);
             if (turn === 0) {
                 console.log("ANYTHING");
-
-
-                $(this).text(playerX);
+                $(this).text(player1);
 
                 boardCheck();
                 checkWin();
@@ -61,28 +54,24 @@ $(document).ready(function() {
                     compGen();
                 }
             } else {
-
-                $(this).text(playerO);
-
+                $(this).text(player2);
                 console.log("EveryTHING");
                 boardCheck();
                 checkWin();
                 turn = 0;
             }
         }
-
-    );
+);
     $('#restart').on('click', function(event) {
         singlePlayerOn = 0;
         boardCheck();
         clearBoard();
         $(".result1").css('opacity', '0');
         $(".result2").css('opacity', '0');
-        // $(".displayMessage").text('');
+        audio.pause();
+        audio1.pause();
         $(".displayMessage").hide();
-
-
-    });
+});
     newGame();
 });
 
@@ -92,209 +81,158 @@ boardCheck = function() {
     a1 = $('#a1').html();
     a2 = $('#a2').html();
     a3 = $('#a3').html();
-    b1 = $('#b1').html();
-    b2 = $('#b2').html();
-    b3 = $('#b3').html();
-    c1 = $('#c1').html();
-    c2 = $('#c2').html();
-    c3 = $('#c3').html();
+    a4 = $('#a4').html();
+    a5 = $('#a5').html();
+    a6 = $('#a6').html();
+    a7 = $('#a7').html();
+    a8 = $('#a8').html();
+    a9 = $('#a9').html();
 };
 
 // CREATES A FUNCTION TO DETECT A WIN OR A TIE
 checkWin = function() { // CHECKS IF X WON
     if ((a1 == a2 && a1 == a3 && (a1 == "x")) || //first row
-        (b1 == b2 && b1 == b3 && (b1 == "x")) || //second row
-        (c1 == c2 && c1 == c3 && (c1 == "x")) || //third row
-        (a1 == b1 && a1 == c1 && (a1 == "x")) || //first column
-        (a2 == b2 && a2 == c2 && (a2 == "x")) || //second column
-        (a3 == b3 && a3 == c3 && (a3 == "x")) || //third column
-        (a1 == b2 && a1 == c3 && (a1 == "x")) || //diagonal 1
-        (a3 == b2 && a3 == c1 && (a3 == "x")) //diagonal 2
+        (a4 == a5 && a4 == a6 && (a4 == "x")) || //second row
+        (a7 == a8 && a7 == a9 && (a7 == "x")) || //third row
+        (a1 == a4 && a1 == a7 && (a1 == "x")) || //first column
+        (a2 == a5 && a2 == a8 && (a2 == "x")) || //second column
+        (a3 == a6 && a3 == a9 && (a3 == "x")) || //third column
+        (a1 == a5 && a1 == a9 && (a1 == "x")) || //diagonal 1
+        (a3 == a5 && a3 == a7 && (a3 == "x")) //diagonal 2
     ) {
         xWin = true;
         winAlert();
 
     } else { // CHECKS IF O WON
         if ((a1 == a2 && a1 == a3 && (a1 == "o")) || //first row
-            (b1 == b2 && b1 == b3 && (b1 == "o")) || //second row
-            (c1 == c2 && c1 == c3 && (c1 == "o")) || //third row
-            (a1 == b1 && a1 == c1 && (a1 == "o")) || //first column
-            (a2 == b2 && a2 == c2 && (a2 == "o")) || //second column
-            (a3 == b3 && a3 == c3 && (a3 == "o")) || //third column
-            (a1 == b2 && a1 == c3 && (a1 == "o")) || //diagonal 1
-            (a3 == b2 && a3 == c1 && (a3 == "o")) //diagonal 2
+            (a4 == a5 && a4 == a6 && (a4 == "o")) || //second row
+            (a7 == a8 && a7 == a9 && (a7 == "o")) || //third row
+            (a1 == a4 && a1 == a7 && (a1 == "o")) || //first column
+            (a2 == a5 && a2 == a8 && (a2 == "o")) || //second column
+            (a3 == a6 && a3 == a9 && (a3 == "o")) || //third column
+            (a1 == a5 && a1 == a9 && (a1 == "o")) || //diagonal 1
+            (a3 == a5 && a3 == a7 && (a3 == "o")) //diagonal 2
         ) {
             oWin = true;
             winAlert();
 
-        } else { // CHECKS FOR TIE GAME IF ALL CELLS ARE FILLED
+        } else { // checks for draw condition
 
-            if (((a1 == "x") || (a1 == "o")) && ((b1 == "x") || (b1 == "o")) &&
-                ((c1 == "x") || (c1 == "o")) && ((a2 == "x") || (a2 == "o")) &&
-                ((b2 == "x") || (b2 == "o")) && ((c2 == "x") || (c2 == "o")) &&
-                ((a3 == "x") || (a3 == "o")) && ((b3 == "x") || (b3 == "o")) &&
-                ((c3 == "x") || (c3 == "o"))) {
+            if (((a1 == "x") || (a1 == "o")) && ((a4 == "x") || (a4 == "o")) &&
+                ((a7 == "x") || (a7 == "o")) && ((a2 == "x") || (a2 == "o")) &&
+                ((a5 == "x") || (a5 == "o")) && ((a8 == "x") || (a8 == "o")) &&
+                ((a3 == "x") || (a3 == "o")) && ((a6 == "x") || (a6 == "o")) &&
+                ((a9 == "x") || (a9 == "o"))) {
 
                 $(".displayMessage").text("It's a tie!").show();
-                // winAlert();
-
-
-            }
+                clearBoard();
         }
     }
+}
 };
 
 
-// DECLARES WHO WON
+// checking who is winner
 var winAlert = function() {
     if (xWin === true) {
-        // $(".displayMessage").val('');
         $(".displayMessage").show();
         $(".displayMessage").text("X wins!");
-        // audioWin.play();
-        // audioWin.play();
-        // alert("X Wins!");
+        audio.play();
         $(".result1").css('opacity', '1');
         $(".result2").css('opacity', '0');
-
-
         clearBoard();
-
-
-    } else {
+        } else {
         if (oWin === true) {
-            // $(".displayMessage").val('');
-            $(".displayMessage").show();
-            $(".displayMessage").text("O wins!");
-            // alert("0 Wins!");
-            $(".result2").css('opacity', '1');
-            $(".result1").css('opacity', '0');
-// audioWin.play();
-            clearBoard();
-
+        $(".displayMessage").show();
+        $(".displayMessage").text("O wins!");
+        audio1.play();
+        $(".result2").css('opacity', '1');
+        $(".result1").css('opacity', '0');
+        clearBoard();
         }
     }
 };
 
 
-// NEWGAME BUTTON CLEARS THE BOARD, RESTARTS GAME, AND RESETS THE WINS
+ // removing elements from cells
 var clearBoard = function() {
-    // console.log(" clear game ");
     a1 = $('#a1').text("");
-    b1 = $('#b1').text("");
-    c1 = $('#c1').text("");
+    a4 = $('#a4').text("");
+    a7 = $('#a7').text("");
     a2 = $('#a2').text("");
-    b2 = $('#b2').text("");
-    c2 = $('#c2').text("");
+    a5 = $('#a5').text("");
+    a8 = $('#a8').text("");
     a3 = $('#a3').text("");
-    b3 = $('#b3').text("");
-    c3 = $('#c3').text("");
+    a6 = $('#a6').text("");
+    a9 = $('#a9').text("");
     xWin = false;
     oWin = false;
     newGame();
-    // window.setTimeout(location.reload(), 5000);
-
 };
 
 
 var compGen = function() {
-    if (a1 === "" && ((a3 === "x" && a2 === "x") || (c3 === "x" && b2 === "x") || (c1 === "x" && b1 === "x"))) {
-
+    if (a1 === "" && ((a3 === "x" && a2 === "x") || (a9 === "x" && a5 === "x") || (a7 === "x" && a5 === "x"))) {
         $('#a1').text("o");
-        // $('.dollImage2').css('opacity', '1');
-        // $('.dollImage1').css('opacity', '0');
         turn = 0;
     } else {
-        if (a2 === "" && ((a1 === "x" && a3 === "x") || (c2 === "x" && b2 === "x"))) {
-
+        if (a2 === "" && ((a1 === "x" && a3 === "x") || (a8 === "x" && a5 === "x"))) {
             $('#a2').text("o");
-            // $('.dollImage2').css('opacity', '1');
-            // $('.dollImage1').css('opacity', '0');
             turn = 0;
         } else {
-            if (a3 === "" && ((a1 === "x" && a2 === "x") || (c1 === "x" && b2 === "x") || (c3 === "x" && b3 === "x"))) {
-
+            if (a3 === "" && ((a1 === "x" && a2 === "x") || (a7 === "x" && a5 === "x") || (a9 === "x" && a6 === "x"))) {
                 $('#a3').text("o");
-                // $('.dollImage2').css('opacity', '1');
-                // $('.dollImage1').css('opacity', '0');
                 turn = 0;
             } else {
-                if (c3 === "" && ((c1 == "x" && c2 == "x") || (a1 == "x" && b2 == "x") || (a3 == "x" && b3 == "x"))) {
-                    $('#c3').text("o");
-                    // $('.dollImage2').css('opacity', '1');
-                    // $('.dollImage1').css('opacity', '0');
+                if (a9 === "" && ((a7 == "x" && a8 == "x") || (a1 == "x" && a5 == "x") || (a3 == "x" && a6 == "x"))) {
+                    $('#a9').text("o");
                     turn = 0;
                 } else {
-                    if (c1 === "" && ((c3 == "x" && c2 == "x") || (a3 == "x" && b2 == "x") || (a1 == "x" && b1 == "x"))) {
-                        $('#c1').text("o");
-                        // $('.dollImage2').css('opacity', '1');
-                        // $('.dollImage1').css('opacity', '0');
+                    if (a7 === "" && ((a9 == "x" && a8 == "x") || (a3 == "x" && a5 == "x") || (a1 == "x" && a4 == "x"))) {
+                        $('#a7').text("o");
                         turn = 0;
                     } else {
-                        if (c2 === "" && ((c3 == "x" && c1 == "x") || (a2 == "x" && b2 == "x"))) {
-                            $('#c2').text("o");
-                            // $('.dollImage2').css('opacity', '1');
-                            // $('.dollImage1').css('opacity', '0');
+                        if (a8 === "" && ((a9 == "x" && a7 == "x") || (a2 == "x" && a5 == "x"))) {
+                            $('#a8').text("o");
                             turn = 0;
                         } else {
-                            if (b1 === "" && ((b3 == "x" && b2 == "x") || (a1 == "x" && c1 == "x"))) {
-                                $('#b1').text("o");
-                                // $('.dollImage2').css('opacity', '1');
-                                // $('.dollImage1').css('opacity', '0');
+                            if (a4 === "" && ((a6 == "x" && a5 == "x") || (a1 == "x" && a7 == "x"))) {
+                                $('#a4').text("o");
                                 turn = 0;
                             } else {
-                                if (b3 === "" && ((a3 == "x" && c3 == "x") || (b2 == "x" && b1 == "x"))) {
-                                    $('#b3').text("o");
-                                    // $('.dollImage2').css('opacity', '1');
-                                    // $('.dollImage1').css('opacity', '0');
+                                if (a6 === "" && ((a3 == "x" && a9 == "x") || (a5 == "x" && a4 == "x"))) {
+                                    $('#a6').text("o");
                                     turn = 0;
                                 } else {
-                                    if (b2 === "" && ((a3 == "x" && c1 == "x") || (c3 == "x" && a1 == "x") || (b3 == "x" && b1 == "x") || (c2 == "x" && a2 == "x"))) {
-                                        $('#b2').text("o");
-                                        // $('.dollImage2').css('opacity', '1');
-                                        // $('.dollImage1').css('opacity', '0');
+                                    if (a5 === "" && ((a3 == "x" && a7 == "x") || (a9 == "x" && a1 == "x") || (a6 == "x" && a4 == "x") || (a8 == "x" && a2 == "x"))) {
+                                        $('#a5').text("o");
                                         turn = 0;
-                                    } else { // IF NO OPP TO BLOCK A WIN, THEN PLAY IN ONE OF THESE SQUARES
-                                        if (b2 === "") {
-                                            $('#b2').text("o");
-                                            // $('.dollImage2').css('opacity', '1');
-                                            // $('.dollImage1').css('opacity', '0');
+                                    } else {
+                                        if (a5 === "") {
+                                            $('#a5').text("o");
                                             turn = 0;
-
                                         } else {
                                             if (a1 === "") {
                                                 $('#a1').text("o");
-                                                // $('.dollImage2').css('opacity', '1');
-                                                // $('.dollImage1').css('opacity', '0');
                                                 turn = 0;
-
                                             } else {
-                                                if (c3 === "") {
-                                                    $('#c3').text("o");
-                                                    // $('.dollImage2').css('opacity', '1');
-                                                    // $('.dollImage1').css('opacity', '0');
+                                                if (a9 === "") {
+                                                    $('#a9').text("o");
                                                     turn = 0;
 
                                                 } else {
-                                                    if (c2 === "") {
-                                                        $('#c2').text("o");
-                                                        // $('.dollImage2').css('opacity', '1');
-                                                        // $('.dollImage1').css('opacity', '0');
+                                                    if (a8 === "") {
+                                                        $('#a8').text("o");
                                                         turn = 0;
 
                                                     } else {
-                                                        if (b1 === "") {
-                                                            $('#b1').text("o");
-                                                            // $('.dollImage2').css('opacity', '1');
-                                                            // $('.dollImage1').css('opacity', '0');
+                                                        if (a4 === "") {
+                                                            $('#a4').text("o");
                                                             turn = 0;
-
                                                         }
                                                     }
                                                 }
                                             }
-
-
                                         }
                                     }
                                 }
