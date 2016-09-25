@@ -1,210 +1,171 @@
 .center {
-    margin-top: 20px;
-    /*float: left;*/
-    /*margin-right: 20px;
-    margin-left: 20px;*/
-    margin-right: auto;
-    margin-left: auto;
+  margin-top: 20px;
+  margin-right: auto;
+  margin-left: auto;
 }
 .italic {
-    font-style: italic;
-    text-decoration: underline;
+  font-style: italic;
+  text-decoration: underline;
 }
-
-/* ELEMENT STYLES */
-
 h1, h4 {
-    text-align: center;
-    font-family: sans-serif;
-    color: #FFCF79;
-    border: 0;
+  text-align: center;
+  font-family: sans-serif;
+  color: black;
+  border: 0;
 }
 p {
-    text-align: center;
-    font-family: sans-serif;
-    line-height: 16pt;
-    color: #666666;
+  text-align: center;
+  font-family: sans-serif;
+  line-height: 16pt;
+  color: #666666;
 }
-
-/*.button {
-        /*margin-left: auto;
-        margin-right: auto;
-        text-align: center;
-    }*/
-
 #restart {
-    /*float: left;*/
-    margin-top: 20px;
-    margin-right: 10px;
-    font-size: 12pt;
-    color: #666666;
-    background-color: #dedede;
-    padding: 5px 15px 5px 15px;
+  /*float: left;*/
+  margin-top: 20px;
+  margin-right: 10px;
+  font-size: 12pt;
+  color: #666666;
+  background-color: #dedede;
+  padding: 5px 15px 5px 15px;
 }
 #option1 {
-    margin-top: 10px;
-    font-size: 12pt;
-    color: #666666;
-    background-color: #dedede;
-    padding: 5px 15px 5px 15px;
+  margin-top: 10px;
+  font-size: 12pt;
+  color: #666666;
+  background-color: #dedede;
+  padding: 5px 15px 5px 15px;
 }
 #option2 {
-    font-size: 12pt;
-    color: #666666;
-    background-color: #dedede;
-    padding: 5px 15px 5px 15px;
+  font-size: 12pt;
+  color: #666666;
+  background-color: #dedede;
+  padding: 5px 15px 5px 15px;
 }
 #board-outer {
-    /*height: 350px;
+  /*height: 350px;
         width: 350px;*/
-    background-color: none;
+  background-color: none;
 }
 #table {
-    width: 354px;
-    height: 354px;
-    float: left;
-    background-color: none;
-    border-spacing: 0;
-    margin-left: 20px;
-    margin-top: 20px;
+  width: 354px;
+  height: 354px;
+  float: left;
+  border-spacing: 0;
+  margin-left: 70px;
+  margin-top: 10px;
 }
 td {
-    height: 116px;
-    width: 116px;
-    text-align: center;
-    font-family: sans-serif;
-    font-size: 40pt;
-    border-collapse: collapse;
-    border: 2px solid #E5E4D7;
-    text-transform: uppercase;
-    color: #999999;
+  height: 120px;
+  width: 120px;
+  text-align: center;
+  font-family: sans-serif;
+  font-size: 40pt;
+  border-collapse: collapse;
+  border: 2px solid #004445;
+  text-transform: uppercase;
+  color: #999999;
 }
 .x {
-    width: 100%;
-    height: 100%;
-    background-color: blue;
+  width: 100%;
+  height: 100%;
+  background-color: blue;
 }
 .o {
-    width: 100%;
-    height: 100%;
-    background-color: red;
+  width: 100%;
+  height: 100%;
+  background-color: red;
 }
 .playerOneResult {
-    margin-left: 15px;
-    margin-right: 15px;
-    margin-top: 5px;
-    float: left;
-    height: 300px;
-    width: 130px;
-    /*border: 2px blue dashed;*/
+  margin-left: 15px;
+  margin-right: 15px;
+  margin-top: 5px;
+  float: left;
+  height: 300px;
+  width: 130px;
 }
-.result1 {
-    height: 140px;
-    width: 140px;
-    /*border: 3px red solid;*/
-    /*float: left;*/
-    margin-top: 30px;
-    /*margin-left: 70px;*/
-    background-image: url('trophy.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0;
-    /*-webkit-animation: swing 1s ease;
-        animation: swing 1s ease;
-        -webkit-animation-iteration-count: 1;
-        animation-iteration-count: 1;*/
+.result1, .result2 {
+  height: 170px;
+  width: 120px;
+  margin-top: 5px;
+  background-image: url('trophy.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0;
 }
-.result2 {
-    height: 140px;
-    width: 140px;
-    /*border: 3px red solid;*/
-    /*float: left;*/
-    margin-top: 30px;
-    /*margin-left: 70px;*/
-    background-image: url('trophy.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 0;
-    /*-webkit-animation: swing 1s ease;
-        animation: swing 1s ease;
-        -webkit-animation-iteration-count: 1;
-        animation-iteration-count: 1;*/
+.shifu_image {
+  height: 200px;
+  width: 200px;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  float: left;
+  background-image: url('shifu1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  /*opacity:.8;*/
+  background-color: transparent;
+}
+.panda_image {
+  height: 200px;
+  width: 200px;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  float: left;
+  margin-right: 60px;
+  background-image: url('panda1.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
 }
 .playerOneResult, .playerTwoResult {
-    display: inline-block;
+  display: inline-block;
 }
 .playerTwoResult {
-    /*margin-right: 70px;*/
-    margin-left: 15px;
-    margin-top: 5px;
-    margin-right: 15px;
-    float: left;
-    height: 300px;
-    width: 130px;
-    /*border: 2px blue dashed;*/
-}
-.dollImage1 {
-    height: 100px;
-    width: 140px;
-    /*border: 3px red solid;*/
-    /*float: left;*/
-    margin-top: 10px;
-    margin-bottom: 15px;
-    background-image: url('image3.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 1;
-}
-.dollImage2 {
-    height: 100px;
-    width: 140px;
-    /*border: 3px red solid;*/
-    /*float: left;*/
-    /*margin: 70px 10px;*/
-    margin-top: 10px;
-    margin-bottom: 15px;
-    background-image: url('image4.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    opacity: 1;
-}
-.dollImage3 {
-    height: 100px;
-    width: 130px;
-    border: 3px black solid;
-    /*float: right;*/
-    margin: 140px auto;
-    background-image: url('image3.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    display: none;
-    /*opacity: 1;*/
+  /*margin-right: 70px;*/
+  margin-left: 15px;
+  margin-top: 5px;
+  margin-right: 15px;
+  float: left;
+  height: 300px;
+  width: 130px;
+  /*border: 2px blue dashed;*/
 }
 .container {
-    height: 470px;
-    width: 750px;
-    margin: auto auto;
-    /*border: 3px blue solid;*/
+  height: 470px;
+  width: 750px;
+  margin: auto auto;
+  /*border: 3px blue solid;*/
 }
 body {
-    background-image: url("background1.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-image: url("background3.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .displayMessage {
-    margin: auto auto;
-    margin-top: 18px;
-    height: 30px;
-    width: 300px;
-    background-color: black;
-    /*#996699;*/
-    text-align: center;
-    font-size: 17px;
-    color: white;
+  margin: auto auto;
+  margin-top: 18px;
+  height: 30px;
+  width: 300px;
+  background-color: indianred;
+  /*#996699;*/
+  text-align: center;
+  font-size: 17px;
+  color: white;
 }
 .centerButton {
-    height: 100px;
-    width: 300px;
-    /*border: 3px red solid;*/
-    margin: 10px auto;
+  height: 100px;
+  width: 300px;
+  /*border: 3px red solid;*/
+  margin: 10px auto;
+}
+.panda {
+  background-image: url('panda1.png');
+  background-repeat: no-repeat;
+  background-size: 120px 120px;
+  font-size: 0;
+}
+.shifu {
+  background-image: url('shifu1.png');
+  background-repeat: no-repeat;
+  background-size: 120px 120px;
+  font-size: 0;
 }
