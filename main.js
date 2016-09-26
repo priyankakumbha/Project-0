@@ -1,7 +1,7 @@
 var player1 = 'x';
 var player2 = 'o';
 var turn = 0;
-var turnCounter=0
+var turnCounter=0;
 
 var boardCheck;
 var c0r0,c1r0, c2r0,c0r1,c1r1,c2r1,c0r2,c1r2,c2r2;
