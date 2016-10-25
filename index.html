@@ -1,69 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
-  <link rel="stylesheet" href="style.css">
-</head>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
 
-<body>
-  <div id="title">
-    <h1 class="depth" title="Tick Tack Toe">Tic Tac Toe</h1>
-  </div>
-
-  <div class="container">
-    <div class="playerOneResult">
-      <div class="result1"></div>
-      <div class="panda_image"></div>
+  <body>
+    <div id="title">
+      <h1 class="depth" title="Tick Tack Toe">Tic Tac Toe</h1>
     </div>
 
-    <audio id="song">
-      <source src="winers.mp3">
-    </audio>
+    <div class="container">
+      <div class="playerOneResult">
+        <div class="result1"></div>
+        <div class="panda_image"></div>
+      </div>
 
-  <!-- <div class="panda_image">fdfd </div> -->
-    <div id="board-outer" class="center">
+      <audio id="song">
+        <source src="winers.mp3">
+      </audio>
 
-      <table id="table">
-        <tr class="row">
-          <td id="c0r0"></td>
-          <td id="c1r0"></td>
-          <td id="c2r0"></td>
-        </tr>
-        <tr class="row">
-          <td id="c0r1"></td>
-          <td id="c1r1"></td>
-          <td id="c2r1"></td>
-        </tr>
-        <tr class="row">
-          <td id="c0r2"></td>
-          <td id="c1r2"></td>
-          <td id="c2r2"></td>
-        </tr>
-      </table>
+      <!-- <div class="panda_image">fdfd </div> -->
+      <div id="board-outer" class="center">
+
+        <table id="table">
+          <tr class="row">
+            <td id="c0r0"></td>
+            <td id="c1r0"></td>
+            <td id="c2r0"></td>
+          </tr>
+          <tr class="row">
+            <td id="c0r1"></td>
+            <td id="c1r1"></td>
+            <td id="c2r1"></td>
+          </tr>
+          <tr class="row">
+            <td id="c0r2"></td>
+            <td id="c1r2"></td>
+            <td id="c2r2"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="playerTwoResult">
+        <div class="result2"></div>
+        <div class="shifu_image"></div>
+      </div>
+
+
+      <br>
+      <br>
+      <br>
+      <div class="centerButton">
+        <button id="restart"> Play again</button>
+        <!-- <button id="option1"> Single Player </button> -->
+      </div>
+
     </div>
-    <div class="playerTwoResult">
-      <div class="result2"></div>
-      <div class="shifu_image"></div>
-    </div>
+    <div class="displayMessage"></div>
 
-
-    <br>
-    <br>
-    <br>
-    <div class="centerButton">
-      <button id="restart"> Play again</button>
-      <button id="option1"> Single Player </button>
-    </div>
-
-  </div>
-  <div class="displayMessage"></div>
-
-</body>
-<script src="jquery.js"></script>
-<script src="main.js"></script>
+  </body>
+  <script src="jquery.js"></script>
+  <script src="main.js"></script>
 
 </html>

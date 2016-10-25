@@ -21,4 +21,5 @@ User can enjoy the game two ways, one way is for two players and another one is 
 1.http://api.jquery.com
 2. https://www.youtube.com/watch?v=6kFKnB6JtcY&spfreload=1
 3.https://blog.vivekpanyam.com/how-to-build-an-ai-that-wins-the-basics-of-minimax-search/
-4.http://codepen.io/bananasimpicity/pen/reKcv
+
+4.http://stackoverflow.com/questions/5117127/use-dynamic-variable-names-in-javascript

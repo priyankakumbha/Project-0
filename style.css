@@ -22,7 +22,8 @@ p {
 #restart {
   /*float: left;*/
   margin-top: 20px;
-  margin-right: 10px;
+  /*margin-right: 10px;*/
+  margin-left: 90px;
   font-size: 12pt;
   color: #666666;
   background-color: #dedede;
@@ -50,8 +51,9 @@ p {
   width: 354px;
   height: 354px;
   float: left;
+  background-color: #305050;
   border-spacing: 0;
-  margin-left: 70px;
+  margin-left: 30px;
   margin-top: 10px;
 }
 td {
@@ -106,11 +108,11 @@ td {
 }
 .panda_image {
   height: 200px;
-  width: 200px;
+  width: 230px;
   margin-top: 30px;
   margin-bottom: 10px;
-  float: left;
-  margin-right: 60px;
+  float: right;
+  /*margin-right: 100px;*/
   background-image: url('panda1.png');
   background-repeat: no-repeat;
   background-size: cover;
