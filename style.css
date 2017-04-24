@@ -122,20 +122,17 @@ td {
   display: inline-block;
 }
 .playerTwoResult {
-  /*margin-right: 70px;*/
   margin-left: 15px;
   margin-top: 5px;
   margin-right: 15px;
   float: left;
   height: 300px;
   width: 130px;
-  /*border: 2px blue dashed;*/
 }
 .container {
   height: 470px;
   width: 750px;
   margin: auto auto;
-  /*border: 3px blue solid;*/
 }
 body {
   background-image: url("background3.jpg");
@@ -148,7 +145,6 @@ body {
   height: 30px;
   width: 300px;
   background-color: indianred;
-  /*#996699;*/
   text-align: center;
   font-size: 17px;
   color: white;
@@ -156,7 +152,6 @@ body {
 .centerButton {
   height: 100px;
   width: 300px;
-  /*border: 3px red solid;*/
   margin: 10px auto;
 }
 .panda {
